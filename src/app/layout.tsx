@@ -4,6 +4,8 @@ import "./globals.css";
 import StoreProvider from "./StoreProvider";
 import Navbar from "@/components/Navbar";
 
+import Footer from "@/components/Footer";
+
 const roboto = Roboto({
   weight: ['400', '700'],
   style: ['normal', 'italic'],
@@ -27,6 +29,7 @@ export default function RootLayout({
         <StoreProvider>
           <Navbar />
           {children}
+          <Footer />
         </StoreProvider>
       </body>
     </html>

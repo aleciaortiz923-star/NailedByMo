@@ -2,12 +2,11 @@ import Image from 'next/image';
 
 const Navbar = () => {
   return (
-    <nav style={{ backgroundColor: 'rgba(255, 192, 203, 0.5)' }} className="p-[18px]">
-      <div className="relative flex items-center justify-center">
-        <div className="absolute left-0 top-1/2 -translate-y-1/2">
-          <Image src="/Logo.webp" alt="Nailed by Mo Logo" width={104} height={80} />
-        </div>
-        <h1 className="text-2xl font-bold">Welcome to Nailed By Mo</h1>
+    <nav style={{ backgroundColor: 'var(--brand-pink)' }} className="p-[18px]">
+      <div className="relative flex items-center justify-between w-full">
+        <Image src="/Logo.webp" alt="Nailed by Mo Logo" width={104} height={80} />
+        <h1 className="text-2xl font-bold absolute left-1/2 -translate-x-1/2">Welcome to Nailed By Mo</h1>
+        <div style={{width: 104}}></div>
       </div>
     </nav>
   );
