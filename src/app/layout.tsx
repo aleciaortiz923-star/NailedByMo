@@ -25,7 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={roboto.className}>
-      <body>
+      <body className="flex flex-col min-h-screen">
+        <div id="menu-portal" />
         <StoreProvider>
           <Navbar />
           {children}

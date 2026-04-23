@@ -6,6 +6,28 @@
   --brand-pink: #FFB6C1;
 }
 
+/* Embla Carousel Styles */
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  position: relative;
+  flex: 0 0 100%;
+  height: 30rem; /* 480px */
+}
+
+.embla__slide__fade {
+  opacity: 0;
+  transition: opacity 2.4s ease;
+}
+
+.embla__slide__fade.is-active {
+  opacity: 1;
+}
+
 body {
   background-color: white;
   color: black;
@@ -27,7 +49,17 @@ body::before {
     url(/pink-cloud3.svg) no-repeat;
   background-size: 200px 100px, 150px 75px, 250px 125px;
   animation: hovering-clouds 60s infinite linear;
-  opacity: 1;
+  opacity: 0.5;
+}
+
+body.menu-open main,
+body.menu-open nav,
+body.menu-open footer {
+  filter: blur(4px);
+}
+
+main, nav, footer {
+  transition: filter 0.3s ease-in-out;
 }
 
 @keyframes hovering-clouds {
