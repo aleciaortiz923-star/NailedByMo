@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import "./components/Carousel.css";
 import StoreProvider from "./StoreProvider";
 import Navbar from "@/components/Navbar";
 
@@ -29,7 +30,7 @@ export default function RootLayout({
         <div id="menu-portal" />
         <StoreProvider>
           <Navbar />
-          {children}
+          <main className="flex-grow">{children}</main>
           <Footer />
         </StoreProvider>
       </body>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { FaBars, FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
+import { FaBars, FaShoppingCart, FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
 
 const SlideOutMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -64,7 +64,7 @@ const SlideOutMenu = () => {
     { href: "/portfolio", label: "Portfolio" },
     { href: "/gift-cards", label: "Gift Cards" },
     { href: "/contact", label: "Contact" },
-    { href: "/book", label: "Book" },
+    { href: "/cart", label: "Cart" },
   ];
 
   const menu = (
@@ -122,9 +122,14 @@ const SlideOutMenu = () => {
 
   return (
     <>
-      <button onClick={() => setIsMenuOpen(true)} style={{ background: 'transparent', border: 'none', padding: '8px' }}>
-        <FaBars size={24} style={{ color: 'black' }} />
-      </button>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <a href="/cart" className="cursor-pointer">
+          <FaShoppingCart size={24} style={{ color: 'black' }} />
+        </a>
+        <button onClick={() => setIsMenuOpen(true)} className="cursor-pointer" style={{ background: 'transparent', border: 'none', padding: '8px' }}>
+          <FaBars size={24} style={{ color: 'black' }} />
+        </button>
+      </div>
       {menuContainer && createPortal(menu, menuContainer)}
     </>
   );
