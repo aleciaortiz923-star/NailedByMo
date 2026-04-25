@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { FaBars, FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
+import Link from 'next/link';
+
 
 const SlideOutMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -81,7 +83,7 @@ const SlideOutMenu = () => {
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <a href={item.href} style={getLinkStyle(index)}>{item.label}</a>
+            <Link href={item.href} style={getLinkStyle(index)}>{item.label}</Link>
           </li>
         ))}
       </ul>

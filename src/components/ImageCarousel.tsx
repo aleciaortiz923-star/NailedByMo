@@ -27,17 +27,25 @@ const ImageCarousel = () => {
     };
 
     emblaApi.on('select', onSelect);
-    return () => emblaApi.off('select', onSelect);
+
+    return () => {
+      emblaApi.off('select', onSelect);
+    };
   }, [emblaApi]);
+
+  const slideStyle = {
+    borderRadius: '50px',
+    overflow: 'hidden',
+  };
 
   return (
     <div className="embla" ref={emblaRef}>
       <div className="embla__container">
         {imagePaths.map((imagePath, index) => (
-          <div 
+          <div
             className={`embla__slide embla__slide__fade ${index === activeIndex ? 'is-active' : ''}`}
             key={imagePath}
-            style={{ borderRadius: '30px', overflow: 'hidden' }}
+            style={slideStyle}
           >
             <Image
               src={imagePath}
